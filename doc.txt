@@ -1,0 +1,18 @@
+BUDGET APP 
+
+A. Dependencies:
+    1. json-server
+    2. axios
+    3. style custom olacak.
+
+B. Senaryo
+    1. Kullanıcının harcamalarını listeleyeceği bir uygulama olacak.
+    2. Her harcamanın bir kategorisi olmalı.
+    3. Kullanıcı kategori ekleme,silme,güncelleme işlemlerini 
+    yapabilmeli
+    4. Kullanıcı harcamalarla ilgili ekleme,silme,güncelleme
+    işlemlerini yapabilmeli.
+    5. Harcama eklerken alınacak bilgiler:
+        a. tutar*, kategorisi*, mekan, tarih*, başlık,description
+    6. Raporlama ?
+    7. Filtreleme ?
