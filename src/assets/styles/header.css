@@ -6,6 +6,7 @@
     padding: 50px 0px;
 }
 .headerWrapper{
+    position: relative;
     height: 100px;
     width: 70%;
     display: flex;
@@ -16,4 +17,14 @@
 }
 .logoWrapper{
     margin-right: 20px;
+}
+.headerIconWrapper{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 10px;
+    cursor: pointer;
+}
+.headerIconWrapper img{
+    width: 100%;
 }

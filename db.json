@@ -1,40 +1,49 @@
 {
-    "expenses":[
-        {
-            "id":"1",
-            "price":600,
-            "place": "A101",
-            "date": "19.01.2023",
-            "title":"haftalık market",
-            "description": "yağ bile almadık!",
-            "categoryId":"1"
-        },
-        {
-            "id":"2",
-            "price":52000,
-            "place": "Apple",
-            "date": "19.01.2023",
-            "title":"iPhone 14 promax",
-            "description": "patron çıldırdı",
-            "categoryId":"4"
-        }
-    ],
-    "categories":[
-        {
-            "id":"1",
-            "name":"Market"
-        },
-        {
-            "id":"2",
-            "name":"Giyim"
-        },
-        {
-            "id":"3",
-            "name":"Eğitim"
-        },
-        {
-            "id":"4",
-            "name":"Elektronik"
-        }
-    ]    
+  "expenses": [
+    {
+      "id": "1",
+      "price": 600,
+      "place": "A101",
+      "date": "2023-01-19",
+      "title": "haftalık market",
+      "description": "yağ bile almadık!",
+      "categoryId": "1"
+    },
+    {
+      "id": "2",
+      "price": 52000,
+      "place": "Apple",
+      "date": "2023-01-19",
+      "title": "iPhone 14 promax",
+      "description": "patron çıldırdı",
+      "categoryId": "4"
+    },
+    {
+      "price": "100",
+      "place": "Kırtasiye",
+      "title": "kuru boya",
+      "description": "bu bile bu fiyat olmuş!",
+      "date": "2023-01-27",
+      "categoryId": "3",
+      "id": "1674850585624"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Market"
+    },
+    {
+      "id": "2",
+      "name": "Giyim"
+    },
+    {
+      "id": "3",
+      "name": "Eğitim"
+    },
+    {
+      "id": "4",
+      "name": "Elektronik"
+    }
+  ]
 }
