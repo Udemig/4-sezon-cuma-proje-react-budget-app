@@ -15,8 +15,10 @@ const Home = () => {
     id: "0",
     name: "Hepsi",
   });
+  const [didUpdate,setDidUpdate]=useState(false)
 
   useEffect(() => {
+    console.log("didUpdate");
     axios
       .get("http://localhost:3004/categories")
       .then((res) => {
@@ -26,10 +28,11 @@ const Home = () => {
     axios
       .get("http://localhost:3004/expenses")
       .then((res) => {
+        console.log(res.data);
         setExpenses(res.data);
       })
       .catch((err) => {});
-  }, []);
+  }, [didUpdate]);
 
   if (categories === null || expenses === null) return null;
   return (
@@ -44,6 +47,8 @@ const Home = () => {
         selectedCategory={selectedCategory}
         categories={categories}
         expenses={expenses}
+        didUpdate={didUpdate}
+        setDidUpdate={setDidUpdate}
       />
     </div>
   );

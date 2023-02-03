@@ -8,7 +8,8 @@ import addIconHover from "../assets/imgs/addHover.png";
 
 import { useNavigate } from "react-router-dom";
 
-const ListExpenses = ({ expenses = [], categories, selectedCategory }) => {
+const ListExpenses = ({ expenses = [], categories, selectedCategory,didUpdate,setDidUpdate }) => {
+  console.log("expenses",expenses);
   const [filteredExpenses, setFilteredExpenses] = useState(expenses);
   const [addBtnHovered, setAddBtnHovered] = useState(false);
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ const ListExpenses = ({ expenses = [], categories, selectedCategory }) => {
       );
       setFilteredExpenses(tempExpenses);
     }
-  }, [selectedCategory]);
+  }, [selectedCategory,didUpdate]);
   return (
     <div>
       <div className="expensesContainer">
@@ -56,6 +57,8 @@ const ListExpenses = ({ expenses = [], categories, selectedCategory }) => {
                   categories={categories}
                   key={expense.id}
                   expense={expense}
+                  didUpdate={didUpdate}
+                  setDidUpdate={setDidUpdate}
                 />
               ))}
             </>

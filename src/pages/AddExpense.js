@@ -9,7 +9,7 @@ import "../assets/styles/addExpense.css";
 import { useNavigate } from "react-router-dom";
 
 const AddExpense = () => {
-    const navigate=useNavigate()
+  const navigate = useNavigate();
   var year = new Date().getFullYear();
   var month = new Date().getMonth() + 1;
   if (month < 10) month = `0${month}`;
@@ -43,19 +43,21 @@ const AddExpense = () => {
       form.categoryId === "" ||
       form.place === "" ||
       form.description === "" ||
-      form.date === ""
+      form.date === "" || 
+      form.categoryId === "empty"
     ) {
       alert("Bütün alanlar zorunludur");
       return;
     }
-    axios.post("http://localhost:3004/expenses", {
-      ...form,
-      id: String(new Date().getTime()),
-    })
-    .then(res=>{
-        navigate("/")
-    })
-    .catch(err=>{})
+    axios
+      .post("http://localhost:3004/expenses", {
+        ...form,
+        id: String(new Date().getTime()),
+      })
+      .then((res) => {
+        navigate("/");
+      })
+      .catch((err) => {});
   };
   if (categories === null) return null;
   return (
@@ -121,10 +123,10 @@ const AddExpense = () => {
           <div className="formElement">
             <label htmlFor="date">Kategori</label>
             <select
-              defaultValue={categories[0].id}
               onChange={(event) =>
                 setForm({ ...form, categoryId: event.target.value })
               }>
+              <option value={"empty"}>Kategori Seçin</option>
               {categories.map((category) => (
                 <option key={category.id} value={category.id}>
                   {category.name}
