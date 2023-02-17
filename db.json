@@ -13,19 +13,10 @@
       "id": "2",
       "price": 52000,
       "place": "Apple",
-      "date": "2023-01-19",
+      "date": "2023-01-22",
       "title": "iPhone 14 promax",
       "description": "patron çıldırdı",
       "categoryId": "4"
-    },
-    {
-      "price": "100",
-      "place": "Kırtasiye",
-      "title": "kuru boya",
-      "description": "bu bile bu fiyat olmuş!",
-      "date": "2023-01-27",
-      "categoryId": "3",
-      "id": "1674850585624"
     }
   ],
   "categories": [
@@ -44,6 +35,10 @@
     {
       "id": "4",
       "name": "Elektronik"
+    },
+    {
+      "id": "1676667401884",
+      "name": "Eğlence"
     }
   ]
 }

@@ -17,9 +17,13 @@ const GeneralModal = ({
         <h2 className="modalTitle">{title}</h2>
         <p className="modalContentText">{content}</p>
         <div className="modalButtonsWrapper">
-          <button className="cancelBtn" onClick={closeButtonClick}>{closeButtonText}</button>
+          <button className="cancelBtn" onClick={closeButtonClick}>
+            {closeButtonText}
+          </button>
           {hasConfirm === true && (
-            <button className="confirmBtn" onClick={confirmButtonClick}>{confirmButtonText}</button>
+            <button className="confirmBtn" onClick={confirmButtonClick}>
+              {confirmButtonText}
+            </button>
           )}
         </div>
       </div>
