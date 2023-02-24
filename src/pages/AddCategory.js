@@ -6,6 +6,8 @@ import "../assets/styles/addExpense.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+import { checkSpecialCharsAndNumbers } from "../utils/functions";
+
 const AddCategory = () => {
     const navigate=useNavigate()
   const [form, setForm] = useState({
@@ -33,6 +35,10 @@ const AddCategory = () => {
     if(hasCategory !== undefined){
         alert("Bu kategori zaten mevcut")
         return
+    }
+    if(checkSpecialCharsAndNumbers(form.name)){
+      alert("Kategori adı özel karakter içeremez")
+      return
     }
     axios.post("http://localhost:3004/categories",form)
     .then(res=>{

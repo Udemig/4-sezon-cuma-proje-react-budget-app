@@ -1,44 +1,27 @@
 {
   "expenses": [
     {
-      "id": "1",
-      "price": 600,
+      "price": "650",
       "place": "A101",
-      "date": "2023-01-19",
-      "title": "haftalık market",
-      "description": "yağ bile almadık!",
-      "categoryId": "1"
-    },
-    {
-      "id": "2",
-      "price": 52000,
-      "place": "Apple",
-      "date": "2023-01-22",
-      "title": "iPhone 14 promax",
-      "description": "patron çıldırdı",
-      "categoryId": "4"
+      "title": "Haftalık alışveriş",
+      "description": "",
+      "date": "2023-02-22",
+      "categoryId": "1677269153120",
+      "id": "1677269218487"
     }
   ],
   "categories": [
     {
-      "id": "1",
+      "id": "1677269153120",
       "name": "Market"
     },
     {
-      "id": "2",
-      "name": "Giyim"
+      "id": "1677269716821",
+      "name": "deneme"
     },
     {
-      "id": "3",
-      "name": "Eğitim"
-    },
-    {
-      "id": "4",
-      "name": "Elektronik"
-    },
-    {
-      "id": "1676667401884",
-      "name": "Eğlence"
+      "id": "1677272257180",
+      "name": "dEnEmEe"
     }
   ]
 }

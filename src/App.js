@@ -7,6 +7,8 @@ import AddExpense from "./pages/AddExpense";
 import EditExpense from "./pages/EditExpense";
 import CategoryOperations from "./pages/CategoryOperations";
 import AddCategory from "./pages/AddCategory";
+import EditCategory from "./pages/EditCategory";
+
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
           <Route path="/edit-expense/:expenseId" element={<EditExpense />} />
           <Route path="/category-operations" element={<CategoryOperations />} />
           <Route path="/add-category" element={<AddCategory />} />
+          <Route path="/edit-category/:categoryId" element={<EditCategory />} />
         </Routes>
       </BrowserRouter>
     </>

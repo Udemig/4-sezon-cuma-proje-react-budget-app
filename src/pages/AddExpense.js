@@ -6,22 +6,20 @@ import axios from "axios";
 
 import "../assets/styles/addExpense.css";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+
+import { formatDateForDateInput } from "../utils/functions";
 
 const AddExpense = () => {
   const navigate = useNavigate();
-  var year = new Date().getFullYear();
-  var month = new Date().getMonth() + 1;
-  if (month < 10) month = `0${month}`;
-  var date = new Date().getDate();
-  if (date < 10) date = `0${date}`;
+  
 
   const [form, setForm] = useState({
     price: "",
     place: "",
     title: "",
     description: "",
-    date: `${year}-${month}-${date}`,
+    date: formatDateForDateInput(new Date()),
     categoryId: "",
   });
   const [categories, setCategories] = useState(null);
@@ -42,8 +40,7 @@ const AddExpense = () => {
       form.title === "" ||
       form.categoryId === "" ||
       form.place === "" ||
-      form.description === "" ||
-      form.date === "" || 
+      form.date === "" ||
       form.categoryId === "empty"
     ) {
       alert("Bütün alanlar zorunludur");
@@ -121,21 +118,33 @@ const AddExpense = () => {
             />
           </div>
           <div className="formElement">
-            <label htmlFor="date">Kategori</label>
-            <select
-              onChange={(event) =>
-                setForm({ ...form, categoryId: event.target.value })
-              }>
-              <option value={"empty"}>Kategori Seçin</option>
-              {categories.map((category) => (
-                <option key={category.id} value={category.id}>
-                  {category.name}
-                </option>
-              ))}
-            </select>
+            {categories.length > 0 && (
+              <>
+                <label htmlFor="date">Kategori</label>
+                <select
+                  onChange={(event) =>
+                    setForm({ ...form, categoryId: event.target.value })
+                  }>
+                  <option value={"empty"}>Kategori Seçin</option>
+                  {categories.map((category) => (
+                    <option key={category.id} value={category.id}>
+                      {category.name}
+                    </option>
+                  ))}
+                </select>
+              </>
+            )}
+            {categories.length <= 0 && (
+              <div style={{textAlign:'center'}}>
+                <Link to={"/add-category"}>
+                  Henüz kayıtlı kategoriniz olmadığı için öncelikle kategori
+                  eklemelisiniz.
+                </Link>
+              </div>
+            )}
           </div>
           <div className="submitBtnWrapper">
-            <button className="submitBtn" type="submit">
+            <button disabled={categories.length <= 0 ? true : false} className="submitBtn" type="submit">
               Kaydet
             </button>
           </div>

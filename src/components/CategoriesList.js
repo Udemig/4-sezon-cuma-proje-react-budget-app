@@ -4,6 +4,8 @@ import "../assets/styles/categoryList.css";
 
 import {Link} from "react-router-dom"
 
+import { upperFirstLetter } from "../utils/functions";
+
 const CategoriesList = ({
   categories = [],
   selectedCategory,
@@ -26,7 +28,7 @@ const CategoriesList = ({
             className={`categoryItem ${
               selectedCategory.id === category.id ? "categoryItemActive" : ""
             }`}>
-            {category.name}
+            {upperFirstLetter(category.name)}
           </p>
         ))}
         <div className="categoryOperationLinkWrapper">
